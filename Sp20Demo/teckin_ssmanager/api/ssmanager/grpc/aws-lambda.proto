@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package api.ssmanager.grpc;
+option go_package = "./";
+
+message CheckUserRequest {
+    string Uid = 1;
+}
+
+message CheckUserResponse  {
+    string Password = 1;
+    string Email = 2;
+}
+
+message MqttCheckRequest {
+    string Msg = 1;   //传过来的mqttbody
+}
+
+message OperateResponse {
+    int32 Code = 1;
+    string Message = 2;
+}
+
+
+service lambda{
+    rpc StreamGetUserInfo(CheckUserRequest) returns (CheckUserResponse) {}
+    rpc StreamMqttCheck(MqttCheckRequest) returns (OperateResponse) {}
+}

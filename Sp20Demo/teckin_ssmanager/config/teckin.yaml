@@ -1,0 +1,29 @@
+kafka:
+  brokers : amqp://guest:guest@192.168.0.56:30001/    #kafka地址，多个使用分号;连接
+  version : 2.6.1   #kafka版本，根据使用的awskafka版本填写
+  group : teckin    #kafka组名
+  channelbuffersize : 256
+
+mysql:
+  addr : 3.142.23.10    #mysql地址
+  port : 30006   #mysql端口
+  user : root   #mysql账号
+  password : mysql   #mysql密码
+  dbname : teckin   #mysql数据库
+
+redis:
+  addr : 3.142.23.10:30020   #redis地址
+  password : 123456
+  db : 0    #redis使用db，默认0
+
+http:
+  addr : ":15000"   #http端口
+
+grpc:
+  addr : ":21000"     #grpc端口
+
+awsiot:
+  akid : AKIAWED5N4XQVXOQCAPN                 #aws 用户id
+  secretKey : itmUAmdeBOGAqKa0Cj7CPicnGO2AhThvhi5p/8aR  #aws 用户secret
+  region : ap-northeast-1   #aws地区
+  endpoint : ssl://a1on17nd3yssr4-ats.iot.ap-northeast-1.amazonaws.com:8883  #连接mqtt地址
